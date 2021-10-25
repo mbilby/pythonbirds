@@ -2,6 +2,9 @@ from typing import Mapping
 
 
 class Pessoa:
+
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=35):
         self.nome = nome
         self.idade = idade
@@ -23,6 +26,12 @@ if __name__ == '__main__':
     for filho in fernanda.filhos:
         print(filho.nome)
     fernanda.sobrenome = 'Rodrigues'
-    del fernanda.filhos
+    fernanda.olhos = 1
+    del fernanda.olhos
     print(fernanda.__dict__)
     print(marcelo.__dict__)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(fernanda.olhos)
+    print(marcelo.olhos)
+    print(id(Pessoa.olhos), id(fernanda.olhos), id(marcelo.olhos))
