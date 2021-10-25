@@ -22,3 +22,7 @@ if __name__ == '__main__':
     print(fernanda.idade)
     for filho in fernanda.filhos:
         print(filho.nome)
+    fernanda.sobrenome = 'Rodrigues'
+    del fernanda.filhos
+    print(fernanda.__dict__)
+    print(marcelo.__dict__)
